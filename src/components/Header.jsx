@@ -1,7 +1,10 @@
+import { useLocation } from "react-router-dom"
 import {brainwave} from "../assets"
 import { navigation } from "../constants"
 
 export const Header = () => {
+  const pathName = useLocation()
+
   return (
     <div className="fixed top-0 z-50 bg-n-8/90
     backdrop-blur-sm border-b border-n-6 lg:bg-n-8/90
@@ -25,7 +28,11 @@ export const Header = () => {
                         transition-colors hover:text-color-1
                         ${item.onlyMobile ? "lg:hidden" : ""}
                         px-6 py-6 md:py-8 lg:-mr-0.25
-                        lg:text-xs lg:font-semibold`}>
+                        lg:text-xs lg:font-semibold
+                        ${item.url === pathName.hash ?
+                        "z-2 lg:text-n-1" :
+                        "lg:text-n-1/50"}
+                        lg:leading-5 lg:hover:text-n-1 xl:px-12`}>
                             {item.title}
                         </a>
                     })}
