@@ -10,14 +10,14 @@ export const Button = ({className, href, onClick, children, px, white}) => {
 
     const renderLink = () => (
         <a href={href} className={classes}></a>
-    )
+    );
 
     const renderButton = () => (
         <button className={classes}>
             <span className={spanClasses}>{children}</span>
             {ButtonSvg(white)}
         </button>
-    )
+    );
     
     return href ? renderLink : renderButton
 }
