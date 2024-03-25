@@ -1,12 +1,13 @@
 import { useLocation } from "react-router-dom"
 import {brainwave} from "../assets"
 import { navigation } from "../constants"
+import { Button } from "./Button"
 
 export const Header = () => {
   const pathName = useLocation()
 
   return (
-    <div className="fixed top-0 z-50 bg-n-8/90
+    <div className="fixed top-0 left-0 w-full z-50 bg-n-8/90
     backdrop-blur-sm border-b border-n-6 lg:bg-n-8/90
     lg:backdrop-blur-sm">
         <div className="flex items-center px-5 lg:px-7.5 
@@ -21,7 +22,7 @@ export const Header = () => {
                 <div className="relative z-2 flex flex-col
                 items-center justify-center m-auto 
                 lg:flex-row">
-                    {navigation.map((item)=> {
+                    {navigation.map((item)=> (
                         <a key={item.id} href={item.url}
                         className={`block relative font-code
                         text-2xl uppercase text-n-1 
@@ -35,9 +36,18 @@ export const Header = () => {
                         lg:leading-5 lg:hover:text-n-1 xl:px-12`}>
                             {item.title}
                         </a>
-                    })}
+                    ))}
                 </div>
             </nav>
+
+            <a href="#signup" className="button hidden mr-8
+            text-n-1/50 transition-colors hover:text-n-1 lg:block">
+                Nouveau compte            
+            </a>
+
+            <Button className="hidden lg:flex" href="#login">
+                Inscription
+            </Button>
         </div>
     </div>
   )
