@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom"
+import {disablePageScroll, enablePageScroll} from "scroll-lock"
 import {brainwave} from "../assets"
 import { navigation } from "../constants"
 import { Button } from "./Button"
@@ -13,12 +14,17 @@ export const Header = () => {
   const toggleNavigation = () => {
     if (openNavigation) {
         setOpenNavigation(false)
+        enablePageScroll()
     } else {
         setOpenNavigation(true)
+        disablePageScroll()
     }
   }
 
   const handleClick = () => {
+    if (!openNavigation) return;
+    
+    enablePageScroll()
     setOpenNavigation(false)
   }
 
@@ -70,7 +76,8 @@ export const Header = () => {
                 Inscription
             </Button>
 
-            <Button onClick={toggleNavigation} className="ml-auto lg:hidden" px="px-3">
+            <Button onClick={toggleNavigation} 
+            className="ml-auto lg:hidden" px="px-3">
                 <MenuSvg openNavigation={openNavigation} />
             </Button>
         </div>
