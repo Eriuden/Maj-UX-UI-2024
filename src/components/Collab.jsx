@@ -3,6 +3,7 @@ import { brainwaveSymbol } from '../assets'
 import { collabApps, collabContent, collabText } from '../constants'
 import { Button } from './Button'
 import { Section } from './Section'
+import { LeftCurve, RightCurve} from "./design/Collaboration"
 
 export const Collab = () => {
   return (
@@ -32,7 +33,7 @@ export const Collab = () => {
             </div>
 
             <div className='lg:ml-auto xl:w-[38rem]'>
-                <p className='body-2 mb-4 text-n-4 md:mb-16 lg:mb-32
+                <p className='body-2 mb-8 text-n-4 md:mb-16 lg:mb-32
                 lg:w-[22rem] lg:mx-auto'>{collabText}</p>
 
                 <div className='relative left-1/2 flex-w-[22rem] aspect-square
@@ -66,7 +67,9 @@ export const Collab = () => {
                             </li>
                         ))}
                     </ul>
-
+                    
+                    <LeftCurve />
+                    <RightCurve />
                  </div>
             </div>
         </div>
