@@ -1,6 +1,7 @@
 import './App.css'
 import ButtonGradient from "./assets/svg/ButtonGradient"
 import { Benefits } from './components/Benefits'
+import { Collab } from './components/Collab'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 
@@ -11,6 +12,7 @@ const App = () => {
         <Header/>
         <Hero/>
         <Benefits/>
+        <Collab/>
       </div>
       <ButtonGradient/>
     </>    
