@@ -1,9 +1,10 @@
 import React from 'react'
 import { service1, service2 } from '../assets'
-import { brainwaveServices } from '../constants'
+import { brainwaveServices, brainwaveServicesIcons } from '../constants'
 import { Generating } from './Generating'
 import { Heading } from './Heading'
 import { Section } from './Section'
+import {PhotoChatMessage} from "./design/Services"
 
 export const Services = () => {
   return (
@@ -60,10 +61,35 @@ export const Services = () => {
                         <div className='absolute inset-0 flex flex-col
                         justify-end p-8 bg-gradient-to-b
                         from-n-8/0 to-n-8/90 lg:p-15'>
-                            <h4 className='h4 mb-4'>IA perfectionnée</h4>
-                            <p className='body-2 mb-[3rem] text-n-3'>Débloquez
-                            le potentiel des applications fonctionnant avec l'IA
+                            <h4 className='h4 mb-4'>Edition de photos</h4>
+                            <p className='body-2 mb-[3rem] text-n-3'>Améliorez
+                            automatiquement vos photos en utilisant notre
+                            application d'édition de photos par IA
                             </p>
+                        </div>
+                        <PhotoChatMessage />
+                    </div>
+
+                    <div className='p-4 bg-n-7 rounded-3xl
+                    overflow-hidden lg:min-h-[46rem]'>
+                        <div className='py-12 px-4 xl:px-8'>
+                            <h4 className='h4 mb-4'>Génération de vidéo</h4>
+                            <p className='body-2 mb-[2rem] text-n-3'>
+                            IA de génération de vidéos et photos artistiques
+                            </p>
+
+                            <ul className='flex items-center justify-between'>
+                                {brainwaveServicesIcons.map((item,index)=> (
+                                    <li className={`flex items-center 
+                                    justify-center ${index === 2 ?
+                                    'w-[3rem] h-[3rem] p-0.3 bg-conic-gradient rounded-2xl md:w-[4.5rem] md:h-[4.5rem]'
+                                    : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"}`}>
+                                        <div>
+                                            <img src={item}/>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                 </div>
