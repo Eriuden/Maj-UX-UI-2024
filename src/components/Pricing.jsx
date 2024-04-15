@@ -37,6 +37,14 @@ export const Pricing = () => {
           <RightLine/>
         </div>
 
+        <div className='flex justify-center mt-10'>
+          <a className='text-xs font-code font-bold 
+          tracking-wider border-b'
+          href='/pricing'>
+            Tout les détails
+          </a>
+        </div>
+
       </div>
     </Section>
   )
