@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Heading = ({className, title, text}) => {
+export const Heading = ({className, title, text, tag}) => {
   return (
     <div className={`${className} max-w-[50rem] mx-auto
     mb-12 lg:mb-20`}>
