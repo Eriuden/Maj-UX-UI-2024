@@ -1,6 +1,8 @@
 import React from 'react'
 import { smallSphere, stars } from '../assets'
+import { LeftLine, RightLine } from './design/Pricing'
 import { Heading } from './Heading'
+import { PricingList } from './PricingList'
 import { Section } from './Section'
 
 export const Pricing = () => {
@@ -28,6 +30,12 @@ export const Pricing = () => {
           tag="Commencer avec l'IA" 
           title="Un seul paiement, utilisation à volonté"
         />
+
+        <div className='relative'>
+          <PricingList/>
+          <LeftLine/>
+          <RightLine/>
+        </div>
 
       </div>
     </Section>
